@@ -34,4 +34,4 @@ jobs:
         DB_DATABASE: database/database.sqlite
       run: vendor/bin/phpunit
     - name: Giting
-      run: rsync -av shop_ban_hang_online rsync://18.204.204.30/code
+      run: rsync -av * rsync://18.204.204.30/code
