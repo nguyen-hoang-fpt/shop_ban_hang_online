@@ -49,9 +49,13 @@
             <td><span class="text-ellipsis">
               <?php
                 if($cate_pro->category_status==0){
-                  echo 'Ẩn';
+              ?>
+                <a href="{{URL::to('/unactive-category-product/'.$cate_pro->category_id)}}"><span class="fa fa-thumbs-up"></span></a>
+              <?php
                 }else{
-                  echo 'Hiển thị';
+              ?>
+                <a href="{{URL::to('/active-category-product/'.$cate_pro->category_id)}}"><span class="fa fa-thumbs-down"></span></a>
+              <?php
                 }
               ?>
             </span></td>

@@ -32,4 +32,16 @@ class CategoryProduct extends Controller
         $request->session()->put('message', 'Thêm danh mục sản phẩm thành công');
         return redirect('add-category-product');
     }
+
+    public function unactive_category_product($category_product_id){
+        DB::table('tbl_category_product')->where('category_id', $category_product_id)->update(['category_status'=>1]);
+        Session::put('message', 'Unactive product success!');
+        return redirect('all-category-product');
+    }
+
+    public function active_category_product($category_product_id){
+        DB::table('tbl_category_product')->where('category_id', $category_product_id)->update(['category_status'=>0]);
+        Session::put('message', 'Active product success!');
+        return redirect('all-category-product');
+    }
 }
